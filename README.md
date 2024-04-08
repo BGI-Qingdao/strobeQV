@@ -54,39 +54,39 @@ sh strobeQV.sh ngs.reads.fq.gz mat_asm.fasta pat_asm.fasta test
 ### 1. I have one haplotype-collapsed assembly
 ```shell
 # I have one single NGS read file
-mkdir strobeQV
-cd strobeQV
+mkdir strobeQV_eva
+cd strobeQV_eva
 ln -s DATA_PATH/YOUR_NGS_FILE ./ngs.reads.fq.gz
 ln -s DATA_PATH/YOUR_ASM_FILE ./asm.fasta
-sh strobeQV.sh ngs.reads.fq.gz asm.fasta mixed
+sh INSTALL_PATH/strobeQV/strobeQV.sh ngs.reads.fq.gz asm.fasta mixed
 
 # I have multiple NGS read files
 cat DATA_PATH/YOUR_NGS_FILE1 DATA_PATH/YOUR_NGS_FILE2 > DATA_PATH/YOUR_NGS_FILE
-mkdir strobeQV
-cd strobeQV
+mkdir strobeQV_eva
+cd strobeQV_eva
 ln -s DATA_PATH/YOUR_NGS_FILE  ./ngs.reads.fq.gz
 ln -s DATA_PATH/YOUR_ASM_FILE ./asm.fasta
-sh strobeQV.sh ngs.reads.fq.gz asm.fasta mixed
+sh INSTALL_PATH/strobeQV/strobeQV.sh ngs.reads.fq.gz asm.fasta mixed
 ```
 
 ### 2. I have two haplotype-resolved assemblies
 ```shell
 # I have one single NGS read file
-mkdir strobeQV
-cd strobeQV
+mkdir strobeQV_eva
+cd strobeQV_eva
 ln -s DATA_PATH/YOUR_NGS_FILE ./ngs.reads.fq.gz
 ln -s DATA_PATH/YOUR_ASM_FILE1 ./mat_asm.fasta
 ln -s DATA_PATH/YOUR_ASM_FILE2 ./pat_asm.fasta
-sh strobeQV.sh ngs.reads.fq.gz mat_asm.fasta pat_asm.fasta diploid
+sh INSTALL_PATH/strobeQV/strobeQV.sh ngs.reads.fq.gz mat_asm.fasta pat_asm.fasta diploid
 
 # I have multiple NGS read files
 cat DATA_PATH/YOUR_NGS_FILE1 DATA_PATH/YOUR_NGS_FILE2 > DATA_PATH/YOUR_NGS_FILE
-mkdir strobeQV
-cd strobeQV
+mkdir strobeQV_eva
+cd strobeQV_eva
 ln -s DATA_PATH/YOUR_NGS_FILE  ./ngs.reads.fq.gz
 ln -s DATA_PATH/YOUR_ASM_FILE ./mat_asm.fasta
 ln -s DATA_PATH/YOUR_ASM_FILE ./pat_asm.fasta
-sh strobeQV.sh ngs.reads.fq.gz mat_asm.fasta pat_asm.fasta diploid
+sh INSTALL_PATH/strobeQV/strobeQV.sh ngs.reads.fq.gz mat_asm.fasta pat_asm.fasta diploid
 ```
 
 ## Output
