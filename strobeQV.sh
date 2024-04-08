@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ "$#" -lt 3 ]]; then
-	echo "Usage: ./qv.sh <ngs.read.fq.gz> <asm1.fasta> [asm2.fasta] <out> [strobe_n] [strobe_k] [strobe_w] [strobe_m]"
+	echo "Usage: sh strobeQV.sh <ngs.read.fq.gz> <asm1.fasta> [asm2.fasta] <out> [strobe_n] [strobe_k] [strobe_w] [strobe_m]"
 	echo
 	echo -e "\t<read.fq.gz>:\t accurate NGS read set of the same sample"
 	echo -e "\t<asm1.fasta>:\t assembly 1"
@@ -26,6 +26,27 @@ strobe_n=2
 strobe_k=7
 strobe_w=14
 strobe_m=randstrobe
+
+if [[ "$#" -eq 7 ]]; then
+        asm2_fa=""
+	name=$3
+	strobe_n=$4
+	strobe_k=$5
+	strobe_w=$6
+	strobe_m=$7
+else if [[ "$#" -eq 8 ]]; then
+        asm2_fa=$3
+        strobe_n=$5
+	strobe_k=$6
+	strobe_w=$7
+	strobe_m=$8
+else
+	strobe_n=2
+	strobe_k=7
+	strobe_w=14
+	strobe_m=randstrobe
+fi
+
 strobe_kmer=`expr $strobe_k + $strobe_w`
 echo "strobe_kmer: $strobe_kmer"
 read_db=`echo $read_fq | sed 's/.fastq.gz//g' | sed 's/.fq.gz//g' | sed 's/.fastq//g' | sed 's/.fq//g'`
