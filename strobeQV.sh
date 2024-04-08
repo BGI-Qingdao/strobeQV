@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ "$#" -lt 3 ]]; then
-	echo "Usage: ./qv.sh <ngs.read.fq.gz> <asm1.fasta> [asm2.fasta] <out> [strobe_n] [strobe_k] [strobe_w] [strobe_m]"
+	echo "Usage: sh strobeQV.sh <ngs.read.fq.gz> <asm1.fasta> [asm2.fasta] <out> [strobe_n] [strobe_k] [strobe_w] [strobe_m]"
 	echo
 	echo -e "\t<read.fq.gz>:\t accurate NGS read set of the same sample"
 	echo -e "\t<asm1.fasta>:\t assembly 1"
