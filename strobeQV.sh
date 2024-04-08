@@ -48,6 +48,7 @@ else
 fi
 
 strobe_kmer=$[($strobe_n-1)*$strobe_w+$strobe_k]
+strobemer_kmer=$[$strobe_n*$strobe_k]
 echo "strobe_kmer: $strobe_kmer"
 read_db=`echo $read_fq | sed 's/.fastq.gz//g' | sed 's/.fq.gz//g' | sed 's/.fastq//g' | sed 's/.fq//g'`
 
@@ -57,7 +58,7 @@ if [[ ! -e $read_db.strobemer.meryl ]]; then
 	meryl print $read_db.meryl | awk '{print $1}' - >$read_db.kmer
 	kmer2strobemer --nkmer $strobe_n --ksize $strobe_k --wsize $strobe_w <$read_db.kmer >$read_db.strobemer
 	awk '{id=id+1;printf("%s_%s\n%s\n",">sys",id,$0); }' $read_db.strobemer > $read_db.strobemer.fa
-	meryl count k=$strobe_w output $read_db.strobemer.meryl $read_db.strobemer.fa
+	meryl count k=$strobemer_kmer output $read_db.strobemer.meryl $read_db.strobemer.fa
 	echo
 fi
 
@@ -82,7 +83,7 @@ do
 		meryl print $asm.meryl | awk '{print $1}' - >$asm.kmer
 		kmer2strobemer --nkmer $strobe_n --ksize $strobe_k --wsize $strobe_w <$asm.kmer >$asm.strobemer
 		awk '{id=id+1;printf("%s_%s\n%s\n",">sys",id,$0); }' $asm.strobemer > $asm.strobemer.fa
-		meryl count k=$strobe_w output $asm.strobemer.meryl $asm.strobemer.fa
+		meryl count k=$strobemer_kmer output $asm.strobemer.meryl $asm.strobemer.fa
 		echo
 	fi
 
