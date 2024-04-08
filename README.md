@@ -91,7 +91,7 @@ sh strobeQV.sh ngs.reads.fq.gz mat_asm.fasta pat_asm.fasta diploid
 
 ## Output
 
-* !! The QV evaluation results are stored in the <out>.qv file !!
+* !! The QV evaluation results are stored in the "< out >.qv" file !!
 
 ```
 ASM_NAME        # STROBEMERS ONLY IN ASM        # TOTAL STROBEMERS IN ASM        # QV        # ERROR_RATE
