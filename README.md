@@ -84,8 +84,8 @@ cat DATA_PATH/YOUR_NGS_FILE1 DATA_PATH/YOUR_NGS_FILE2 > DATA_PATH/YOUR_NGS_FILE
 mkdir strobeQV_eva
 cd strobeQV_eva
 ln -s DATA_PATH/YOUR_NGS_FILE  ./ngs.reads.fq.gz
-ln -s DATA_PATH/YOUR_ASM_FILE ./mat_asm.fasta
-ln -s DATA_PATH/YOUR_ASM_FILE ./pat_asm.fasta
+ln -s DATA_PATH/YOUR_ASM_FILE1 ./mat_asm.fasta
+ln -s DATA_PATH/YOUR_ASM_FILE2 ./pat_asm.fasta
 sh INSTALL_PATH/strobeQV/strobeQV.sh ngs.reads.fq.gz mat_asm.fasta pat_asm.fasta diploid
 ```
 
