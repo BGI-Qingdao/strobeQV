@@ -18,7 +18,7 @@ This script calculates the quality value (QV) of genome assemblies based on stro
 git clone https://github.com/BGI-Qingdao/strobeQV.git  ./strobeQV
 cd  ./strobeQV/sources
 make
-export PATH=$pwd:$PATH
+export PATH=$PWD:$PATH
 ```
 
 ## Run
