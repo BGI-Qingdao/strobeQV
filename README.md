@@ -11,8 +11,20 @@ This script calculates the quality value (QV) of genome assemblies based on stro
 
 ## Installation
 
+### Download and compile from source codes
 
-Usage: ./qv.sh <ngs.read.fq.gz> <asm1.fasta> [asm2.fasta] <out> [strobe_n] [strobe_k] [strobe_w] [strobe_m]"
+```
+git clone https://github.com/BGI-Qingdao/strobeQV.git  ./strobeQV
+cd  ./strobeQV/sources
+make
+export PATH=$pwd:$PATH
+```
+
+## Run
+* !! strobeQV requires accurate NGS reads in a single file, one haplotype-collapsed or two haplotype-resolved genome assemblies for the same sample !!
+
+
+Usage: ./strobeQV.sh <ngs.read.fq.gz> <asm1.fasta> [asm2.fasta] <out> [strobe_n] [strobe_k] [strobe_w] [strobe_m]"
         echo
         echo -e "\t<read.fq.gz>:\t accurate NGS read set of the same sample"
         echo -e "\t<asm1.fasta>:\t assembly 1"
