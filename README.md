@@ -51,7 +51,7 @@ Usage: sh strobeQV.sh <ngs.read.fq.gz> <asm1.fasta> [asm2.fasta] <out> [strobe_n
 sh strobeQV.sh ngs.reads.fq.gz mat_asm.fasta pat_asm.fasta test
 ```
 
-### 1. I have one assembly (pseudo-haplotype or mixed-haplotype)
+### 1. I have one haplotype-collapsed assembly
 ```shell
 # I have one single NGS read file
 mkdir strobeQV
@@ -69,7 +69,7 @@ ln -s DATA_PATH/YOUR_ASM_FILE ./asm.fasta
 sh strobeQV.sh ngs.reads.fq.gz asm.fasta mixed
 ```
 
-### 2. I have two assemblies (diploid)
+### 2. I have two haplotype-resolved assemblies
 ```shell
 # I have one single NGS read file
 mkdir strobeQV
