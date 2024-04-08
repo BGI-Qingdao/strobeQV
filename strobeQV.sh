@@ -34,7 +34,7 @@ if [[ "$#" -eq 7 ]]; then
 	strobe_k=$5
 	strobe_w=$6
 	strobe_m=$7
-else if [[ "$#" -eq 8 ]]; then
+elif [[ "$#" -eq 8 ]]; then
         asm2_fa=$3
         strobe_n=$5
 	strobe_k=$6
