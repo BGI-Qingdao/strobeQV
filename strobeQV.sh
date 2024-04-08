@@ -47,7 +47,7 @@ else
 	strobe_m=randstrobe
 fi
 
-strobe_kmer=`expr $strobe_k + $strobe_w`
+strobe_kmer=$[($strobe_n-1)*$strobe_w+$strobe_k]
 echo "strobe_kmer: $strobe_kmer"
 read_db=`echo $read_fq | sed 's/.fastq.gz//g' | sed 's/.fq.gz//g' | sed 's/.fastq//g' | sed 's/.fq//g'`
 
