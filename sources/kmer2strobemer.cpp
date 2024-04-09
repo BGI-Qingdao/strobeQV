@@ -62,12 +62,12 @@ int main(int argc ,char ** argv) {
         } else {
             std::cerr<<"N found in line "<<line_num<<" kmer="<<line<<'\n';
         }
-        strobemer::chop_strobemer(rc_line,line.size(),&buff);
-        if( buff.valid) {
-            std::cout<<buff.to_string()<<'\n';
-        } else {
-            std::cerr<<"N found in line "<<line_num<<" kmer="<<line<<'\n';
-        }
+        //strobemer::chop_strobemer(rc_line,line.size(),&buff);
+        //if( buff.valid) {
+        //    std::cout<<buff.to_string()<<'\n';
+        //} else {
+        //    std::cerr<<"N found in line "<<line_num<<" kmer="<<line<<'\n';
+        //}
     }
     return 0;
 }
