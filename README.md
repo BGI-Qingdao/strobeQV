@@ -25,6 +25,8 @@ export PATH=$PWD:$PATH
 
 * !! strobeQV requires accurate NGS reads in a single file, one haplotype-collapsed or two haplotype-resolved genome assemblies for the same sample !!
 
+* !! If you would change the settings of Strobemer, then please input all 4 Strobemer Options at the same time !!
+
 ```
 sh strobeQV.sh <ngs.read.fq.gz> <asm1.fasta> [asm2.fasta] <out> [strobe_n] [strobe_k] [strobe_w] [strobe_m]
 
