@@ -91,7 +91,7 @@ do
 
 	echo "# QV statistics for $asm"
 	ASM_ONLY=`meryl statistics $asm.0.strobemer.meryl  | head -n4 | tail -n1 | awk '{print $2}'`
-	TOTAL=`meryl statistics $asm.strobemer.meryl  | head -n4 | tail -n1 | awk '{print $2}'`
+	TOTAL=`meryl statistics $asm.meryl  | head -n4 | tail -n1 | awk '{print $2}'`
 	if [[ $TOTAL -eq 0 ]]; then
 		echo "[[ ERROR ]] :: $asm has no kmers."
 	else
@@ -101,8 +101,8 @@ do
 	fi
 	echo
 
-	echo "Remove intermediate files: $asm.meryl $asm.kmer $asm.strobemer $asm.strobemer.fa"
-	rm -r $asm.meryl $asm.kmer $asm.strobemer $asm.strobemer.fa
+	echo "Remove intermediate files: $asm.kmer $asm.strobemer $asm.strobemer.fa"
+	rm -r $asm.kmer $asm.strobemer $asm.strobemer.fa
 
 done
 
@@ -118,12 +118,12 @@ asm2=`echo $asm2_fa | sed 's/.fasta.gz//g' | sed 's/.fa.gz//g' | sed 's/.fasta//
 asm1=`echo $asm1_fa | sed 's/.fasta.gz//g' | sed 's/.fa.gz//g' | sed 's/.fasta//g' | sed 's/.fa//g'`
 asm="both"
 
-meryl union-sum output $asm.strobemer.meryl   $asm1.strobemer.meryl   $asm2.strobemer.meryl
+meryl union-sum output $asm.meryl   $asm1.meryl   $asm2.meryl
 meryl union-sum output $asm.0.strobemer.meryl $asm1.0.strobemer.meryl $asm2.0.strobemer.meryl
 
 echo "# QV statistics for $asm"
 ASM_ONLY=`meryl statistics $asm.0.strobemer.meryl  | head -n4 | tail -n1 | awk '{print $2}'`
-TOTAL=`meryl statistics $asm.strobemer.meryl  | head -n4 | tail -n1 | awk '{print $2}'`
+TOTAL=`meryl statistics $asm.meryl  | head -n4 | tail -n1 | awk '{print $2}'`
 ERROR=`echo "$ASM_ONLY $TOTAL" | awk -v k=$strobe_w '{print (1-(1-$1/$2)^(1/k))}'`
 QV=`echo "$ASM_ONLY $TOTAL" | awk -v k=$strobe_w '{print (-10*log(1-(1-$1/$2)^(1/k))/log(10))}'`
 echo -e "$asm\t$ASM_ONLY\t$TOTAL\t$QV\t$ERROR" >> $name.qv
@@ -132,6 +132,7 @@ echo
 echo "Done!"
 #echo "Remove intermediate files:
 #rm -r $asm1.0.meryl $asm2.0.meryl $asm.0.meryl"
+rm -r $asm.meryl $asm1.meryl $asm2.meryl
 
 cat $name.qv
 
