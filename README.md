@@ -8,7 +8,7 @@ This script calculates the quality value (QV) of genome assemblies based on stro
 * gcc/g++ (version>4.8.5 to support c++11)
 * make
 * [Meryl v1.4.1](https://github.com/marbl/meryl/releases/tag/v1.4.1)
-* [strobmers](https://github.com/ksahlin/strobemers)
+* [Strobemers](https://github.com/ksahlin/strobemers)
   
 ## Installation
 
