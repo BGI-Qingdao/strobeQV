@@ -10,8 +10,8 @@ if [[ "$#" -lt 3 ]]; then
 	echo
 	echo -e "Strobemer Options"
 	echo -e "\t[strobe_n]:\t  number of strobes [2], optional"
-        echo -e "\t[strobe_k]:\t  strobe length, limited to 32 [10], optional"
-        echo -e "\t[strobe_w]:\t  window size [30], optional"
+        echo -e "\t[strobe_k]:\t  strobe length, limited to 32 [7], optional"
+        echo -e "\t[strobe_w]:\t  window size [14], optional"
         echo -e "\t[strobe_m]:\t  minstrobe mode [randstrobe], optional"
 	echo
 	echo "** This script calculates the quality value (QV) based on strobemers. **"
